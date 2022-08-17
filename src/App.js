@@ -19,7 +19,7 @@ function App() {
 			<Router>
 				<Switch>
 					<Route exact path="/">
-						<Entry />
+						<Dashboard />
 					</Route>
 					<Route exact path="/registration">
 						<Registration />
