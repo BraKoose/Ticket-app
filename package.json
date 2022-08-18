@@ -1,10 +1,10 @@
 {
-  "name": "TicketApi",
+  "name": "ticketApi",
   "version": "1.0.0",
   "description": "Ally to trotro",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "nodemon app.js",
     "test": "(eslint lib || true) && jest"
   },
   "author": "koose",
