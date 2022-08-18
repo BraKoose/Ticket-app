@@ -1,0 +1,14 @@
+{
+  "name": "TicketApi",
+  "version": "1.0.0",
+  "description": "Ally to trotro",
+  "main": "app.js",
+  "author": "koose",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "helmet": "^5.1.1",
+    "morgan": "^1.10.0"
+  }
+}
