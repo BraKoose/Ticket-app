@@ -21,13 +21,41 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 
 
-const port = process.env.PORT || 4001
+const port = process.env.PORT || 4003
 
-app.use("/", (req, res) => {
-    res.json({
-        message: "Breakfast Koose"
-    })
-})
+//Load Routers
+
+const userRouter = require("./src/routers/user.router");
+const ticketRouter = require("./src/routers/ticket.router")
+
+
+//use Router 
+app.use("/v1/user", userRouter);
+app.use("/v1/ticket", ticketRouter
+)
+
+
+
+
+// app.use("/", (req, res) => {
+//     res.json({
+//         message: "Breakfast Koose"
+//     })
+// })
+
+app.use((req, res, next) => {
+    const error = new Error("Resources not found!")
+    error.status = 404
+    next(error)
+});
+
+app.use((error, req, res, next) => {
+    handleError(error, res);
+});
+
+//Error Handle
+const handleError = require("./src/utils/errorHandle")
+
 
 
 app.listen(port, () => {
