@@ -3,6 +3,8 @@ const router = express.Router();
 
 const { insertUser } = require("../model/user/User.Model")
 
+const { hashPassword } = require("../helpers/")
+
 router.all("/", (req, res, next) => {
     // console.log(name)
     // res.json({ message: "return form user router" })
@@ -12,10 +14,24 @@ router.all("/", (req, res, next) => {
 
 
 router.post('/', async (req, res) => {
+    const { name, company, address, phone, email, password } = req.body;
 
     try {
 
-        const result = await insertUser(req.body)
+        //hashed Password 
+
+        const hashedPass = await hashPassword(password)
+
+        const newUserObj = {
+            name,
+            company,
+            address,
+            phone,
+            email,
+            password: hashedPass
+        }
+
+        const result = await insertUser(newUserObj)
         console.log(result)
 
         res.json({ message: "New User Created", result })
