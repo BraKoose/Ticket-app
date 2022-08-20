@@ -10,9 +10,12 @@
   "author": "koose",
   "license": "MIT",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
     "helmet": "^5.1.1",
+    "mongoose": "^6.5.2",
     "morgan": "^1.10.0"
   }
 }
