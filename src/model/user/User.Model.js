@@ -18,13 +18,17 @@ const getUserByEmail = email => {
 
         if (!email) return false
 
-        UserSchema.findOne({ email }, (error, data) => {
-            if (error) {
-                console.log(error)
-                resolve(error)
-            }
-            resolve(data)
-        })
+        try {
+            UserSchema.findOne({ email }, (error, data) => {
+                if (error) {
+                    console.log(error)
+                    reject(error)
+                }
+                resolve(data)
+            });
+        } catch (error) {
+            reject(error)
+        }
 
     })
 
@@ -32,4 +36,5 @@ const getUserByEmail = email => {
 
 module.exports = {
     insertUser,
+    getUserByEmail
 };
