@@ -1,0 +1,29 @@
+
+###User sign up endpoint
+
+POST http://localhost:6000/v1/user
+
+Content-Type: application/json
+
+{
+    "name": "Toptal",
+    "company": "Google",
+    "address": "Accra",
+    "phone": "0509103721",
+    "email": "Kaneshi@dick.com",
+    "password": "bisexual420"
+
+}
+
+
+
+###User signIn endpoint
+
+POST http://localhost:6000/v1/user/login
+
+Content-Type: application/json
+
+{
+    "email": "koose@dick.com",
+    "password": "bisexual420"
+}
