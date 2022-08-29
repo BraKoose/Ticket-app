@@ -10,8 +10,8 @@ Content-Type: application/json
     "company": "Google",
     "address": "Accra",
     "phone": "0509103721",
-    "email": "Kaneshi@dick.com",
-    "password": "bisexual420"
+    "email": "Kaneshi@Accra.com",
+    "password": "KaneshiAccra"
 
 }
 
@@ -25,5 +25,5 @@ Content-Type: application/json
 
 {
     "email": "koose@dick.com",
-    "password": "bisexual420"
+    "password": "tryWrong420"
 }
